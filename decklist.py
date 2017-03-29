@@ -18,7 +18,7 @@ HEX = 3
 def parse_list(decklist):
     # Magic by default
     game = MTG
-    ncount = 0
+    totalcards = 0
     isSideboard = False
 
     mainboard = []
@@ -95,6 +95,7 @@ def parse_list(decklist):
         elif game == MTG:
             quantity, name = line.split(' ', 1)
             card = scraper.get_card_info(name, quantity)
+            totalcards = totalcards + int(quantity)
             if isSideboard:
                 sideboard.append(card)
             else:
@@ -104,16 +105,18 @@ def parse_list(decklist):
                 data = line.split(' ')
 
                 quantity = data[0]
-                set = data[-2]
+                expansion = data[-2]
                 setID = data[-1]
                 name = data[1]+' '
 
                 for item in data[2:-2]:
                     name += item + ' '
-                mainboard.append(Card(name=name, set=set, quantity=quantity, collector_num=setID, cost=None))
+                mainboard.append(Card(name=name, set=expansion, quantity=quantity, collector_num=setID, cost=None))
 
-        ncount = ncount + 1
-
+    if game == MTG and totalcards == 100 and len(sideboard) < 3:
+        print("Identified Commander deck")
+        commander = sideboard
+        sideboard = []
     return List(game, mainboard, sideboard, commander)
 
 def preprocess_xml(decklist):
