@@ -4,4 +4,9 @@ requests
 pyYAML
 watchdog
 cachecontrol[filecache]
-appdirs
+
+[dev]
+check-manifest
+
+[test]
+coverage

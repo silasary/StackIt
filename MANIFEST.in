@@ -1,0 +1,7 @@
+include *.md
+include *.py
+include *.txt
+recursive-include resources *.dat
+recursive-include resources *.otf
+recursive-include resources *.png
+recursive-include resources *.ttf

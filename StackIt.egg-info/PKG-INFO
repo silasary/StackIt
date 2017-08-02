@@ -1,0 +1,20 @@
+Metadata-Version: 1.1
+Name: StackIt
+Version: 1.4.0
+Summary: Generates visual decklists for various TCGs
+Home-page: https://github.com/poppu-mtg/StackIt
+Author: Guillaume Robert-Demolaize & Katelyn Gigante
+Author-email: UNKNOWN
+License: MIT
+Description: UNKNOWN
+Keywords: mtg tcg
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Topic :: Games/Entertainment :: Board Games
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
